@@ -9,12 +9,12 @@
 					<input name="mail_from" type="text" id="mail_from" value="<?php echo get_option('mail_from'); ?>" size="40" class="regular-text" />
 					<span class="description">
 						<?php
-							_e('You can specify the email address that emails should be sent from. If you leave this blank, the default email will be used.', 'wds_smtp'); 
-							if(get_option('db_version') < 6124) { 
-								echo '<br /><span style="color: red;">'; 
-								_e('<strong>Please Note:</strong> You appear to be using a version of WordPress prior to 2.3. Please ignore the From Name field and instead enter Name&lt;email@domain.com&gt; in this field.', 'wds_smtp'); 
-								echo '</span>'; 
-							} 
+							_e('You can specify the email address that emails should be sent from. If you leave this blank, the default email will be used.', 'wds_smtp');
+							if(get_option('db_version') < 6124) {
+								echo '<br /><span style="color: red;">';
+								_e('<strong>Please Note:</strong> You appear to be using a version of WordPress prior to 2.3. Please ignore the From Name field and instead enter Name&lt;email@domain.com&gt; in this field.', 'wds_smtp');
+								echo '</span>';
+							}
 						?>
 					</span>
 				</td>
@@ -29,7 +29,7 @@
 				</td>
 			</tr>
 		</table>
-						
+
 		<table class="optiontable form-table">
 			<tr valign="top">
 				<th scope="row"><?php _e('Mailer', 'wds_smtp'); ?> </th>
@@ -43,7 +43,7 @@
 				</td>
 			</tr>
 		</table>
-						
+
 		<table class="optiontable form-table">
 			<tr valign="top">
 				<th scope="row"><?php _e('Return Path', 'wds_smtp'); ?> </th>
@@ -53,10 +53,10 @@
 				</fieldset></td>
 			</tr>
 		</table>
-				
+
 		<h3><?php _e('SMTP Options', 'wds_smtp'); ?></h3>
 		<p><?php _e('These options only apply if you have chosen to send mail by SMTP above.', 'wds_smtp'); ?></p>
-				
+
 		<table class="optiontable form-table">
 			<tr valign="top">
 				<th scope="row"><label for="smtp_host"><?php _e('SMTP Host', 'wds_smtp'); ?></label></th>
@@ -86,7 +86,7 @@
 					<label for="smtp_auth_true"><span><?php _e('Yes: Use SMTP authentication.', 'wds_smtp'); ?></span></label><br />
 					<span class="description"><?php _e('If this is set to no, the values below are ignored.', 'wds_smtp'); ?></span>
 				</td>
-			</tr>	
+			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="smtp_user"><?php _e('Username', 'wds_smtp'); ?></label></th>
 				<td><input name="smtp_user" type="text" id="smtp_user" value="<?php echo get_option('smtp_user'); ?>" size="40" class="code" /></td>
@@ -96,15 +96,15 @@
 				<td><input name="smtp_pass" type="text" id="smtp_pass" value="<?php echo get_option('smtp_pass'); ?>" size="40" class="code" /></td>
 			</tr>
 		</table>
-				
+
 		<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes'); ?>" /></p>
 			<input type="hidden" name="action" value="update" />
 		</p>
 		<input type="hidden" name="option_page" value="email">
 	</form>
-				
-	<h3><?php _e('Send a Test Email', 'wds_smtp'); ?></h3>		
-	<form method="POST" action="options-general.php?page=wds-smtp-mail/wds_smtp_mail.php">
+
+	<h3><?php _e('Send a Test Email', 'wds_smtp'); ?></h3>
+	<form method="POST" action="options-general.php?page=wds_smtp_mail">
 		<?php wp_nonce_field('test-email'); ?>
 		<table class="optiontable form-table">
 			<tr valign="top">
@@ -117,5 +117,5 @@
 		<p class="submit">
 			<input type="submit" name="wds_smtp_action" id="wds_smtp_action" class="button-primary" value="<?php _e('Send Test', 'wds_smtp'); ?>" />
 		</p>
-	</form>		
+	</form>
 </div>
