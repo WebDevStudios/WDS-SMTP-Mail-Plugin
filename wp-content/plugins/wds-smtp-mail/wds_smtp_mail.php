@@ -56,9 +56,6 @@ class WDS_SMTP_Mail {
 		//Add the create pages options
 		add_action( 'admin_menu', array( $this, 'menus' ) );
 
-		// Add an activation hook for this plugin
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-
 		// Adds "Settings" link to the plugin action page
 		add_filter( 'plugin_action_links', array( $this, 'plugin_action_links' ), 10, 2 );
 
@@ -162,19 +159,18 @@ class WDS_SMTP_Mail {
 			// Destroy the mailer
 			unset( $phpmailer );
 		}
+
 		require_once( 'options-form.php' );
 	}
 
 	public function menus() {
-		if( function_exists( 'add_submenu_page' ) ) {
-			add_options_page(
-				__( 'Advanced Email Options', 'wds_smtp' ),
-				__( 'Email', 'wds_smtp' ),
-				'manage_options',
-				__FILE__,
-				array( $this, 'options_page' )
-			);
-		}
+		add_options_page(
+			__( 'Advanced Email Options', 'wds_smtp' ),
+			__( 'Email', 'wds_smtp' ),
+			'manage_options',
+			'wds_smtp_mail',
+			array( $this, 'options_page' )
+		);
 	}
 
 	// Sets the from email value
@@ -223,7 +219,7 @@ class WDS_SMTP_Mail {
 			return $links;
 		}
 
-		$settings_link = '<a href="options-general.php?page=' . plugin_basename( __FILE__ ) . '">' . __( 'Settings', 'wds_smtp' ) . '</a>';
+		$settings_link = '<a href="options-general.php?page=wds_smtp_mail">' . __( 'Settings', 'wds_smtp' ) . '</a>';
 
 		array_unshift($links, $settings_link);
 		return $links;
