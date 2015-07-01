@@ -165,7 +165,7 @@ class WDS_SMTP_Mail {
 	public function menus() {
 		add_options_page(
 			__( 'Advanced Email Options', 'wds_smtp' ),
-			__( 'Email', 'wds_smtp' ),
+			__( 'Email Options', 'wds_smtp' ),
 			'manage_options',
 			'wds_smtp_mail',
 			array( $this, 'options_page' )
