@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2><?php _e('MS Office SMTP Mail Options', 'wds_smtp'); ?></h2>
+	<h2><?php _e('WDS SMTP Mail Options', 'wds_smtp'); ?></h2>
 	<form method="post" action="options.php">
 		<?php wp_nonce_field('email-options'); ?>
 		<table class="optiontable form-table">
