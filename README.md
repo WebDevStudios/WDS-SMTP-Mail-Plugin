@@ -52,7 +52,8 @@ Password: your mail password
 
 ## Screenshots
 
-1. Screenshot of the Options > Email Options page.
+![](https://raw.githubusercontent.com/WebDevStudios/WDS-SMTP-Mail-Plugin/master/screenshot-1.png)
+Screenshot of the Options > Email Options page.
 
 ## Changelog
 
