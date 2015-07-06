@@ -225,7 +225,7 @@ class WDS_SMTP_Mail {
 	}
 }
 
-$_GLOBALS['wds_smtp'] = new WDS_SMTP_Mail;
-$_GLOBALS['wds_smtp']->do_hooks();
+$GLOBALS['wds_smtp'] = new WDS_SMTP_Mail;
+$GLOBALS['wds_smtp']->do_hooks();
 
 endif; // end class_exists check
