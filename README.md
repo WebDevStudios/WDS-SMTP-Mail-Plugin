@@ -29,6 +29,35 @@ You can set the following options:
 2. Upload to your `/wp-contents/plugins/` directory.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
+### Using Composer
+
+Update `composer.json` with something similar to:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:WebDevStudios/WDS-SMTP-Mail-Plugin.git"
+        }
+    ],
+    "require": {
+        "WebDevStudios/WDS-SMTP-Mail-Plugin": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+            "plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    }
+}
+```
+
+...and run `composer install` or `composer update`.
+
+#### Parent Repos
+
+If you do not intend to commit changes to the parent repository, make sure and add `/plugins/WDS-SMTP-Mail-Plugin` to your `.gitignore`.
+
 ## Frequently Asked Questions
 
 ### My plugin still sends mail via the mail() function
