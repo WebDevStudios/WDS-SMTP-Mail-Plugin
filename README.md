@@ -88,6 +88,7 @@ Screenshot of the Options > Email Options page.
 
 ### 1.0.0
 * Forked and revamped by WebDevStudios
+* Composerified
 
 ### 0.9.5
 * Minor security fix, hat tip JD Grimes.
